@@ -14,14 +14,14 @@ This is fully ready Docker container with:
  ### Quickstart
 
 ```sh
-git clone ....
-cd 
-mkdir notebooks
+git clone git@github.com:seanfcarroll/data_science.git
+cd data_science
+docker build . -t data_science
 ```
 
 Docker container with the following command:
 ```sh
-docker run -it -p 8888:8888 -p 6006:6006 -d -v $(pwd)/notebooks:/notebooks
+docker run -it data_science -p 8888:8888 -p 6006:6006 -d -v $(pwd)/notebooks:/notebooks
 ```
 We're using following parameters:
 - ```-p 8888:8888``` to export Jupyter Web interface

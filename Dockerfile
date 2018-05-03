@@ -2,10 +2,11 @@ FROM continuumio/anaconda3
 MAINTAINER "Sean F. Carroll"
 
 RUN apt-get update && apt-get install -y libgtk2.0-dev && \
+    conda update -n base conda && \
     rm -rf /var/lib/apt/lists/* && \
     /opt/conda/bin/conda install jupyter -y && \
     /opt/conda/bin/conda install -c menpo opencv3 -y && \
-    /opt/conda/bin/conda install numpy pandas scikit-learn matplotlib seaborn pyyaml h5py keras -y && \
+    /opt/conda/bin/conda install numpy pandas scikit-learn matplotlib seaborn pyyaml h5py -y && \
     /opt/conda/bin/conda upgrade dask && \
     pip install tensorflow imutils
 
